@@ -71,7 +71,7 @@ int lo::konu() {   //...^...
 }
 
 int lo::disu() {   //...U...
-    ans = frst + scnd - (frst + scnd);
+    ans = frst + scnd - (frst * scnd);
     return ans;
 }
 
@@ -81,7 +81,7 @@ int lo::inve() {   //...(+)...
 }
 
 int lo::ksor() {   //...inv...
-    ans = 1 - frst;
+    ans = 1 - scnd;
     return ans;
 }
 

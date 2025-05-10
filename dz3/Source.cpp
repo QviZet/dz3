@@ -5,6 +5,9 @@ int main(int argc, const char* argv[]) {
     std::string fileName = argv[2];
     std::vector<std::string> reestr;
     fillReestr(reestr, fileName);
+    for (size_t i = 0; i < reestr.size(); i++) {
+        std::cout << reestr[i] << " ";
+    }
 
     bool flag = false;//флаг для перехода на новую итерацию цикла после выполнения любой операции
 
@@ -55,7 +58,7 @@ int main(int argc, const char* argv[]) {
             }
         }
     }
-    else {
+    if (mod == "log") {
         while (reestr.size() >= 3) {
             for (size_t i = 2; i < reestr.size(); i++) {
 
@@ -82,9 +85,8 @@ int main(int argc, const char* argv[]) {
                     flag = true;
                 }
                 else if (reestr[i] == "!") {
-                    reestr[i - 2] = std::to_string(newAr.disu());
+                    reestr[i - 1] = std::to_string(newAr.disu());
                     reestr.erase(reestr.cbegin() + i);
-                    reestr.erase(reestr.cbegin() + i - 1);
                     flag = true;
                 }
 
@@ -96,9 +98,12 @@ int main(int argc, const char* argv[]) {
                 if (flag == true) break;
             }
         }
+        if (reestr.size() == 2) { //обрабатываем ситуацию инверсии последним действием
+            reestr[0] = std::to_string(1 - stoi(reestr[0]));
+            reestr.erase(reestr.cbegin() + 1);
+        }
     }
     std::cout << "\n";
-    reestr.erase(reestr.cbegin() + 1);
     for (size_t i = 0; i < reestr.size(); i++) {
         std::cout << reestr[i] << " ";
     }
