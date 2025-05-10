@@ -1,4 +1,4 @@
-#include "Header.h"
+ï»¿#include "Header.h"
 
 std::map<std::string, int> ar_operations
 {
@@ -92,7 +92,7 @@ void fillReestr(std::vector<std::string>& data, std::string& fileName)
     std::ifstream read(fileName);
     if (!read)
     {
-        std::cout << "Îøèáêà, ôàéë íå íàéäåí" << std::endl;
+        std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°, Ñ„Ð°Ð¹Ð» Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½" << std::endl;
         system("pause");
     }
     std::string a;
